@@ -63,6 +63,7 @@ function getGame(req, res) {
  * Example: localhost:3000/game
  * Body: { "name": "Fresh Prince" } */
 function addGame(req, res) {
+  debugger
   const name = req.body.name;
   if (!name) {
     return res.status(401).end();

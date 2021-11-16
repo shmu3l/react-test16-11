@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "antd": "4.16.12",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "fuse-box": "^3.6.0",
