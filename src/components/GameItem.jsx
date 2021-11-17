@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { GameContext } from '../contexts/GameContext'
-import { List, Modal, Button, } from 'antd';
+import { List, Modal, Button, Popconfirm } from 'antd';
 import EditGameForm from '../components/EditGameForm';
 
 const GameItem = ({ game }) => {
@@ -36,9 +36,17 @@ const GameItem = ({ game }) => {
             <EditGameForm formId={game.id} gameId={game.id} />
           </Modal>
         </>,
-        <Button type="danger" onClick={handleRemoveGame}>
-          Remove
-        </Button>
+        <Popconfirm
+          title="Are you sure to delete this game?"
+          onConfirm={handleRemoveGame}
+          okText="Yes"
+          cancelText="No"
+        >
+          <Button type="danger" >
+            Remove
+          </Button>
+        </Popconfirm>,
+
       ]}
     >
       <List.Item.Meta
